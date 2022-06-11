@@ -3,6 +3,7 @@
  background-color: bisque;
 }
 
-.item {
- color: green;
+.content__img img{
+ height: 200px;
+ width: 100%;
 }

@@ -1,0 +1,31 @@
+.nav {
+ grid-area: n;
+ background-color: #E4F0F6;
+width: 240px;
+}
+
+.nav__list {
+ list-style: none;
+ padding: 0 5px;
+ margin-top: 8px 0 0;
+}
+
+.item {
+ color: #000;
+ font-weight: 400;
+ padding: 10px 5px;
+ transition: all .3s;
+ cursor: pointer;
+ border-radius: 5px;
+ font-size: 20px;
+ line-height: 24px;
+}
+
+.item:hover {
+ background-color: #d4d4d4;
+}
+
+.item.active {
+ color: #fff;
+ font-weight: 500;
+}
