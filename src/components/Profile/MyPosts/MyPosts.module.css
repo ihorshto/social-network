@@ -1,7 +1,7 @@
-.item {
- color: green;
+.posts{
+ margin-top: 10px;
 }
 
-.item img{
- width: 50px;
+.postsBlock{
+ margin-left: 10px;
 }

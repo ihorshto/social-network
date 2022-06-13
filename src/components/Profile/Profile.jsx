@@ -1,15 +1,12 @@
 import MyPosts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
  return (
      <div>
-      <div className={s.content__img}>
-         <img src = 'https://images-na.ssl-images-amazon.com/images/I/61+oIVFF7FL.png' / >
-      </div>
-      <div>
-        ava + descr
-      </div>
+      <ProfileInfo/>
+      <MyPosts/>
      </div>
  );
 }
