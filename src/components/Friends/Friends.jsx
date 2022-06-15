@@ -2,9 +2,8 @@ import s from './Friends.module.css';
 import FriendsItem from './FriendsItem/FriendsItem';
 
 const Friends = (props) => {
-
  let UserElements = props.userItems.map(u => <FriendsItem name={u.name} id={u.id} />);
- 
+
  return (
   <div className={s.friendsWrapper}>
    <h3>Friends</h3>

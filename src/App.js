@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
@@ -11,7 +11,6 @@ import Profile from './components/Profile/Profile';
 function App(props) {
 
   return (
-      <BrowserRouter>
         <div className='app-wrapper'>
           <Header/>
           <Navbar state = {props.state.sidebar}/>
@@ -27,7 +26,7 @@ function App(props) {
               </Routes>
           </div>
         </div>
-      </BrowserRouter>
+
   );  
 }
 
