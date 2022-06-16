@@ -7,7 +7,6 @@ import Settings from './components/Settings/Settings';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import { addPost } from './redux/state';
 
 function App(props) {
 
@@ -20,23 +19,19 @@ function App(props) {
                 <Route path='/profile' element={<Profile 
                   profilePage = {props.state.profilePage} 
                   addPost={props.addPost}
-                  updateNewPostText={props.updateNewPostText} />} / >
+                  updateNewPostText={props.updateNewPostText} />}/>
                 <Route path='/dialogs/*' element={<Dialogs 
                   state={props.state.dialogsPage} 
                   addMessage={props.addMessage}
                   updateNewTextMessage={props.updateNewTextMessage}
-                  newTextMessage={props.state.dialogsPage.newTextMessage} 
-                   / >
-                  }
-                  / >
-                <Route path='/news' element={<News/>} />
-                <Route path='/music' element={<Music/>} />
-                <Route path='/settings' element={<Settings/>} />
+                  newTextMessage={props.state.dialogsPage.newTextMessage} />}/>
+                <Route path='/news' element={<News/>}/>
+                <Route path='/music' element={<Music/>}/>
+                <Route path='/settings' element={<Settings/>}/>
               </Routes>
           </div>
         </div>
-
-  );  
+        );  
 }
 
 

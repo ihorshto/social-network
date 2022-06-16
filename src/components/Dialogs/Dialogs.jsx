@@ -18,7 +18,6 @@ const Dialogs = (props) => {
   let onChangeMessage = () => {
     let message = newMessage.current.value;
     props.updateNewTextMessage(message);
-
   }
 
   return (
