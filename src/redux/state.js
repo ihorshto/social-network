@@ -30,63 +30,27 @@ let store = {
 			newPostText: ""
 		},
 		dialogsPage: {
-			dialogs: [{
-					id: 1,
-					name: "Ihor"
-				},
-				{
-					id: 2,
-					name: "Zenuk"
-				},
-				{
-					id: 3,
-					name: "Tolik"
-				},
-				{
-					id: 4,
-					name: "Masha"
-				},
-				{
-					id: 5,
-					name: "Olga"
-				}
+			dialogs: [
+				{id: 1, name: "Ihor"},
+				{id: 2, name: "Zenuk"},
+				{id: 3, name: "Tolik"},
+				{id: 4, name: "Masha"},
+				{id: 5,	name: "Olga"}
 			],
-			messages: [{
-					id: 1,
-					message: "Hi"
-				},
-				{
-					id: 2,
-					message: "Yo IT komasutra"
-				},
-				{
-					id: 3,
-					message: "Nice stuff"
-				},
-				{
-					id: 4,
-					message: "Woow coool man!"
-				},
-				{
-					id: 5,
-					message: "Woow coool man!"
-				},
+			messages: [
+				{id: 1, message: "Hi"},
+				{id: 2,	message: "Yo IT komasutra"},
+				{id: 3, message: "Nice stuff"},
+				{id: 4, message: "Woow coool man!"},
+				{id: 5,	message: "Woow coool man!"},
 			],
 			newTextMessage: ""
 		},
 		sidebar: {
-			userItems: [{
-					id: 1,
-					name: "Ihor"
-				},
-				{
-					id: 2,
-					name: "Zenuk"
-				},
-				{
-					id: 3,
-					name: "Tolik"
-				}
+			userItems: [
+				{id: 1, name: "Ihor"},
+				{id: 2, name: "Zenuk"},
+				{id: 3, name: "Tolik"}
 			]
 		}
 	},
@@ -134,10 +98,10 @@ export const updateNewPostTextActionCreator = (text) => ({
 		type: UPDATE_NEW_POST_TEXT,
 		newText: text
 })
-export const addMessageActionCreator = () =>  ({type: ADD_MESSAGE})
-export const updateNewTextMessageActionCreator = (message) => ({
+export const addMessageCreator = () =>  ({type: ADD_MESSAGE})
+export const updateNewTextMessageCreator = (NewMessageBody) => ({
 		type: UPDATE_NEW_TEXT_MESSAGE,
-		oneNewMessage: message
+		oneNewMessage: NewMessageBody
 })
 
 
