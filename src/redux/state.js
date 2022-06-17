@@ -95,20 +95,7 @@ let store = {
 	subscribe(observer) {
 		this._callSubscriber = observer;
 	},
-	addMessage() {
-		let newMessage = {
-			id: 6,
-			message: this._state.dialogsPage.newTextMessage
-		};
-		this._state.dialogsPage.messages.push(newMessage);
-		this._state.dialogsPage.newTextMessage = '';
-		this._callSubscriber(this._state);
-	},
-	updateNewTextMessage(oneNewMessage) {
-		this._state.dialogsPage.newTextMessage = oneNewMessage;
-		this._callSubscriber(this._state);
-	},
-
+	
 	dispatch(action) {
 		if (action.type === 'ADD-POST') {
 			let newPost = {
@@ -119,12 +106,22 @@ let store = {
 			this._state.profilePage.posts.push(newPost);
 			this._state.profilePage.newPostText = '';
 			this._callSubscriber(this._state);
-		} else if(action.type === 'UPDATE-NEW-POST-TEXT') {
+		} else if (action.type === 'UPDATE-NEW-POST-TEXT') {
 			this._state.profilePage.newPostText = action.newText;
 			this._callSubscriber(this._state);
+		} else if (action.type === 'ADD-MESSAGE') {
+			let newMessage = {
+				id: 6,
+				message: this._state.dialogsPage.newTextMessage
+			};
+			this._state.dialogsPage.messages.push(newMessage);
+			this._state.dialogsPage.newTextMessage = '';
+			this._callSubscriber(this._state);
+		} else if (action.type === 'UPDATE-NEW-TEXT-MESSAGE') {
+					this._state.dialogsPage.newTextMessage = action.oneNewMessage;
+					this._callSubscriber(this._state);
 		}
 	}
-
 }
 
 
