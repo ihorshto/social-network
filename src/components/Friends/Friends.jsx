@@ -2,7 +2,7 @@ import s from './Friends.module.css';
 import FriendsItem from './FriendsItem/FriendsItem';
 
 const Friends = (props) => {
- let UserElements = props.userItems.map(u => <FriendsItem name={u.name} id={u.id} />);
+ let UserElements = props.state.userItems.map(u => <FriendsItem name={u.name} id={u.id} />);
 
  return (
   <div className={s.friendsWrapper}>
