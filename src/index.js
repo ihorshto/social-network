@@ -12,9 +12,9 @@ let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-      <StoreContext.Provider value={store}>
+      <Provider store={store}>
         <App/>
-      </StoreContext.Provider>
+      </Provider>
       </BrowserRouter>
     </React.StrictMode>
   );
