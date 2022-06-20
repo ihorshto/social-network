@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       </Provider>
       </BrowserRouter>
     </React.StrictMode>
-  );
+  ); 
 
 
 
