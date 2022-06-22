@@ -24,6 +24,7 @@ let Users = (props) => {
       {props.users.map(u => <div key={u.id}>
         <span>
           <div>
+      
             <img className={s.photo} src={u.photos.small != null ? u.photos.small : userPhoto} />
           </div>
           <div>
