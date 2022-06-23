@@ -1,13 +1,22 @@
+import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+if(!props.profile){
+ return <Preloader/>
+}
+
  return (
   <div>
    <div className={s.content__img}>
     <img src='https://images-na.ssl-images-amazon.com/images/I/61+oIVFF7FL.png' />
    </div>
    <div className={s.descriptionBlock}>
-    ava + descr
+    <div>
+     <img src={props.profile.photos.large} alt="" />
+    </div>
+    {props.profile.fullName}
    </div>
   </div>
  )
