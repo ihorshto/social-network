@@ -7,7 +7,6 @@ const ProfileInfo = (props) => {
 		return <Preloader />
 	}
 
-	debugger;
 	return (
 		<div>
 			<div className={s.content__img}>
