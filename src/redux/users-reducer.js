@@ -77,7 +77,6 @@ const usersReducer = (state = initialState, action) => {
 				: state.followingInProgress.filter(id => id!== action.userId)
 			}
 		}
-
 		default:
 			return state;
 	}
@@ -104,12 +103,10 @@ export const setUsersTotalCount = (totalUsersCount) => ({
 	type: SET_TOTAL_USERS_COUNT,
 	count: totalUsersCount
 })
-
 export const toggleIsFetching = (isFetching) => ({
 	type: TOOGLE_IS_FETCHING,
 	isFetching
 })
-
 export const toggleFollowingProgress = (isFetching, userId) => ({
 	type: TOOGLE_IS_FOLLOWING_PROGRESS,
 	isFetching,
