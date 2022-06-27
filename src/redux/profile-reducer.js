@@ -73,10 +73,10 @@ export const setUserProfile = (profile) => ({
 	profile
 })
 
-export const getUser = (userId) => {
+export const getUserProfile = (userId) => {
 	return (dispatch) => {
-		 profileAPI.getUser(userId).then(data => {
-		 	dispatch(setUserProfile(data));
+		 profileAPI.getProfile(userId).then(response => {
+		 	dispatch(setUserProfile(response));
 		 })
 	}
 }

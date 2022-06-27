@@ -4,7 +4,6 @@ import { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers } f
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
 
-
 class UsersContainer extends React.Component {
 	componentDidMount() {
 		this.props.getUsers(this.props.currentPage, this.props.pageSize);
@@ -12,7 +11,8 @@ class UsersContainer extends React.Component {
 
 	onPageChanged = (pageNumber) => {
 		this.props.getUsers(pageNumber, this.props.pageSize);
-	}
+		this.props.setCurrentPage(pageNumber); // current page
+		}
 
 	render() {
 		return <>

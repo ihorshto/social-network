@@ -128,7 +128,6 @@ export const getUsers = (currentPage, pageSize) => {
 		});
 	}
 }
-
 export const follow = (userId) => {
 	return (dispatch) => {
 
@@ -142,7 +141,6 @@ export const follow = (userId) => {
 		})
 	}
 }
-
 export const unfollow = (userId) => {
 	return (dispatch) => {
 
