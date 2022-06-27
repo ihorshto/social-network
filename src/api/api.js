@@ -14,5 +14,33 @@ export const userAPI = {
 			.then(response => {
 				return response.data;
 			});
+	},
+	follow(userId) {
+		return instance.post(`follow/${userId}`, {})
+			.then(response => {
+				return response.data;
+			});
+	},
+	unfollow(userId) {
+		return instance.delete(`follow/${userId}`, {})
+			.then(response => {
+				return response.data;
+			});
+	}
+}
+
+export const headerAPI = {
+	authMe() {
+		return instance.get(`auth/me`, {}).then(response => {
+			return response.data;
+		})
+	}
+}
+
+export const profileAPI = {
+	getUser(userId) {
+		return instance.get(`profile/` + userId).then(response => {
+			return response.data;
+		});
 	}
 }
