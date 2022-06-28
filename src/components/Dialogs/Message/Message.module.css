@@ -1,0 +1,26 @@
+.message {
+ margin-top: 10px;
+ padding-left: 10px;
+ display: flex;
+ align-items: center;
+}
+
+.message img {
+ width: 30px;
+ height: 30px;
+ object-fit: cover;
+ border-radius: 50%;
+ margin-right: 10px;
+}
+
+.message:nth-child(2n) {
+ display: flex;
+ justify-content: flex-end;
+ margin-right: 10px;
+}
+
+.messageBg{
+ background-color: rgb(130, 255, 255);
+ padding: 3px;
+ border-radius: 10px;
+}

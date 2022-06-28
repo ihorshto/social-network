@@ -1,0 +1,35 @@
+.content__img {
+ height: 200px;
+}
+
+.content__img img {
+ height: 200px;
+ width: 100%;
+}
+
+.descriptionBlock {
+ margin: 10px 0 0 10px;
+ display: flex;
+}
+
+.descriptionInfo {
+ margin-left: 30px;
+ font-size: 22px;
+ line-height: 24px;
+ margin-top: 10px;
+}
+
+.fullName,
+.aboutInfo,
+.lookingJobDescr {
+ margin-bottom: 15px;
+ font-weight: 500;
+}
+
+.fullName span,
+.aboutInfo span,
+.lookingJobDescr span {
+ color: green;
+ margin-left: 10px;
+ font-weight: 400;
+}

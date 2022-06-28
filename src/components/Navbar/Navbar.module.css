@@ -1,0 +1,40 @@
+.nav {
+ grid-area: n;
+ background-color: #d5ecf7;
+ width: 240px;
+}
+
+.nav__list {
+ list-style: none;
+ padding: 0 5px;
+ margin: 0;
+}
+
+.item {
+ color: #000;
+ font-weight: 400;
+ transition: all .3s;
+ cursor: pointer;
+ border-radius: 5px;
+ font-size: 20px;
+ line-height: 24px;
+ text-decoration: none;
+ cursor: pointer;
+}
+
+.item a {
+ display: block;
+ padding: 10px 5px;
+}
+
+
+.active {
+ color: #fff;
+ background-color: #d4d4d4;
+ border-radius: 5px;
+ text-decoration: none;
+}
+
+.item:hover {
+ background-color: #d8d8d8;
+}
