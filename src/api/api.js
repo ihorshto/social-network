@@ -10,7 +10,6 @@ const instance = axios.create({
 
 export const userAPI = {
 	getUsers(currentPage = 2, pageSize = 10) {
-			debugger;
 		return instance.get(`users?page=${currentPage}&count=${pageSize}`)
 			.then(response => {
 				return response.data;
@@ -40,8 +39,13 @@ export const headerAPI = {
 
 export const profileAPI = {
 	getProfile(userId) {
-		return instance.get(`profile/` + userId).then(response => {
-			return response.data;
-		});
+		return instance.get(`profile/` + userId);
+	},
+	getStatus(userId) {
+		return instance.get(`profile/status/` + userId);
+	},
+	updateStatus(status) {
+		return instance.put(`profile/status/`, {status: status});
 	}
+
 }

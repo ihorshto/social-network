@@ -16,12 +16,12 @@ const ProfileInfo = (props) => {
 			<div className={s.descriptionBlock}>
 				<div className={s.descriptionPhoto}>
 					<img src={props.profile.photos.large} alt="" />
-				</div>
+				</div> 
 				<div className={s.descriptionInfo}>
 					<div className={s.fullName}>Name:
 						<span>{props.profile.fullName}</span>
 					</div>
-					<div className={s.aboutInfo}>About me:
+					<div className={s.aboutInfo}>About me: 
 						<span>{props.profile.aboutMe}</span>
 					</div>
 					<div className={s.lookingJobDescr}>Looking  for a job:
@@ -29,7 +29,7 @@ const ProfileInfo = (props) => {
 					</div>
 				</div>
 			</div>
-			<ProfileStatus status={"Hello my friends!!!!!"} />
+			<ProfileStatus status={props.status} updateStatus={props.updateStatus} />
 		</div>
 	)
 }
