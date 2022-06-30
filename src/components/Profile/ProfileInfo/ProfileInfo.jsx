@@ -10,9 +10,6 @@ const ProfileInfo = (props) => {
 
 	return (
 		<div className={s.descriptionContainer}>
-			{/* <div className={s.content__img}>
-				<img src='https://images-na.ssl-images-amazon.com/images/I/61+oIVFF7FL.png' />
-			</div> */}
 			<div className={s.descriptionBlock}>
 				<div className={s.descriptionPhoto}>
 					<img src={props.profile.photos.large} alt="" />
