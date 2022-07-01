@@ -3,7 +3,8 @@ import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
 import { Navigate } from 'react-router-dom';
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, useFormik } from "formik";
+import * as Yup from "yup";
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -28,26 +29,41 @@ const Dialogs = (props) => {
 }
 
 const AddMassageForm = (props) => {
+  const formik = useFormik({
+    initialValues: {
+      newTextMessage: ""
+    },
+    validationSchema: Yup.object({
+      newTextMessage: Yup.string()
+        .required("")
+    }),
+    onSubmit: (values, { resetForm }) => {
+      addNewMessage(values);
+      console.log(values);
+      resetForm(values.newTextMessage = "")
+    }
+  })
+
   let addNewMessage = (values) => {
     props.sendMessage(values.newTextMessage);
   }
 
   return (
-    <Formik initialValues={{ newTextMessage: "" }}
-      onSubmit={(values, { resetForm }) => {
-        addNewMessage(values);
-        console.log(values);
-        resetForm({ values: '' });
-      }}
-    >
-      {() => (
-        <Form>
-          <div>
-            <Field name={'newTextMessage'} type={'textarea'} placeholder={'enter text'} />
-          </div>
-          <button type={'submit'}>Send</button>
-        </Form>
-      )}
+    <Formik >
+      <Form onSubmit={formik.handleSubmit}>
+        <div>
+          <Field name={'newTextMessage'} type={"textarea"} placeholder={'Enter text'}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.newTextMessage}
+          />
+        </div>
+        {
+          formik.touched.newTextMessage && formik.errors.newTextMessage
+            ? <button type={'submit'} disabled={true}>Send</button>
+            : <button type={'submit'} disabled={false}>Send</button>
+        }
+      </Form>
     </Formik>
   )
 }
