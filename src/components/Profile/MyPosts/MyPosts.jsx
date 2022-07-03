@@ -29,7 +29,7 @@ const MyPostsForm = (props) => {
 		},
 		validationSchema: Yup.object({
 			newPostText: Yup.string()
-				.required("")
+				.required("Required")
 		}),
 		onSubmit: (values, {resetForm}) => {
 			addPostText(values);
@@ -38,11 +38,13 @@ const MyPostsForm = (props) => {
 		}
 	})
 
+
+
 	let addPostText = (values) => {
 		props.addPost(values.newPostText);
 	}
 	return (
-		<Formik >
+		<Formik>
 			<Form onSubmit={formik.handleSubmit}>
 				<div>
 					<Field name={'newPostText'} type={"textarea"} placeholder={'Enter text'}

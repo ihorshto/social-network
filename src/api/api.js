@@ -26,6 +26,13 @@ export const userAPI = {
 			.then(response => {
 				return response.data;
 			});
+	},
+	
+	login(email, password, rememberMe = false) {
+				return instance.post(`auth/login`, {email, password, rememberMe });
+	},
+		logout() {
+				return instance.delete(`auth/login`);
 	}
 }
 

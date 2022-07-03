@@ -35,7 +35,7 @@ const AddMassageForm = (props) => {
     },
     validationSchema: Yup.object({
       newTextMessage: Yup.string()
-        .required("")
+        .required("Required")
     }),
     onSubmit: (values, { resetForm }) => {
       addNewMessage(values);
@@ -43,7 +43,6 @@ const AddMassageForm = (props) => {
       resetForm(values.newTextMessage = "")
     }
   })
-
   let addNewMessage = (values) => {
     props.sendMessage(values.newTextMessage);
   }
