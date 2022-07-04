@@ -48,11 +48,13 @@ export const getAuthUserData = () =>  (dispatch) => {
 		});
 	}
 
-export const login = (email, password, rememberMe) => (dispatch) => {
+export const login = (email, password, rememberMe, setFieldValue) => (dispatch) => {
 		userAPI.login(email, password, rememberMe)
 			.then(response => {
 				if (response.data.resultCode === 0) {
 					dispatch(getAuthUserData());
+				} else {
+								setFieldValue("general", response.data.messages.join(" "))
 				}
 			});
 	}

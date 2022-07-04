@@ -13,8 +13,8 @@ const LoginForm = (props) => {
 			password: "",
 			rememberMe: false
 		},
-		onSubmit: (values) => {
-			props.login(values.email, values.password, values.rememberMe)
+		onSubmit: (values, {setFieldValue}) => {
+			props.login(values.email, values.password, values.rememberMe, setFieldValue)
 			console.log(values);
 		},
 		validationSchema: Yup.object({
@@ -25,8 +25,7 @@ const LoginForm = (props) => {
 				.required("Required")
 		})
 	});
-
-	return (
+	return ( 
 		<div>
 			<Formik>
 				<Form onSubmit={formik.handleSubmit}>
@@ -38,6 +37,9 @@ const LoginForm = (props) => {
 						<Field type={"password"} name={"password"} placeholder={"Enter password"} onChange={formik.handleChange} onBlur={formik.handleBlur} />
 					</div>
 					{formik.errors.password && formik.touched.password ? <p className={s.error}>Required</p> : null}
+					<div>
+						{formik.values.general ? <span className={s.incorrectError}>{formik.values.general}</span> : null}
+					</div>
 					<div>
 						<Field type="checkbox" name={"rememberMe"} onChange={formik.handleChange} onBlur={formik.handleBlur} checked={formik.values.rememberMe} />
 						<label htmlFor={"rememberMe"}>remember me</label>
