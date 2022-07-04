@@ -20,7 +20,6 @@ const LoginForm = (props) => {
 		validationSchema: Yup.object({
 			email: Yup.string()
 				.required("Required"),
-				
 			password: Yup.string()
 				.required("Required")
 		})
