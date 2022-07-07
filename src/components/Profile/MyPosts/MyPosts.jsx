@@ -6,6 +6,7 @@ import s from './MyPosts.module.css';
 
 const MyPosts = (props) => {
 	let postsElements = props.posts.map(p => <Post message={p.message} key={p.id} likesCount={p.likesCount} />);
+	console.log("RENDER");
 	return (
 		<div className={s.postsBlock}>
 			<h3>My posts</h3>
@@ -20,7 +21,7 @@ const MyPosts = (props) => {
 			</div>
 		</div>
 	);
-}
+};
 
 const MyPostsForm = (props) => {
 	const formik = useFormik({
@@ -36,7 +37,7 @@ const MyPostsForm = (props) => {
 			console.log(values);
 			resetForm(values.newPostText = "")
 		}
-	})
+	});
 
 
 
