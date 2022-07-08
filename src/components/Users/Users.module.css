@@ -5,10 +5,6 @@
  border-radius: 50%;
 }
 
-.selectedPage {
- font-weight: 700;
-}
-
 .unfollow {
  background-color: rgb(248, 57, 57);
  border: none;
