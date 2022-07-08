@@ -2,7 +2,7 @@ import {
 	headerAPI, userAPI
 } from "../api/api";
 
-const SET_USER_DATA = 'SET_USER_DATA';
+const SET_USER_DATA = 'samurai-network/auth/SET_USER_DATA';
 
 let initialState = {
 	userId: null,
@@ -35,8 +35,9 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({
 	}
 })
 
-export const getAuthUserData = () =>  (dispatch) => {
-		return headerAPI.authMe().then(data => {
+export const getAuthUserData = () => async (dispatch) => {
+		let data = await headerAPI.authMe()
+	
 			if (data.resultCode === 0) {
 				let {
 					id,
@@ -45,27 +46,24 @@ export const getAuthUserData = () =>  (dispatch) => {
 				} = data.data;
 				dispatch(setAuthUserData(id, email, login, true));
 			}
-		});
 	}
 
-export const login = (email, password, rememberMe, setFieldValue) => (dispatch) => {
-		userAPI.login(email, password, rememberMe)
-			.then(response => {
+export const login = (email, password, rememberMe, setFieldValue) => async (dispatch) => {
+
+	let response = await	userAPI.login(email, password, rememberMe)
 				if (response.data.resultCode === 0) {
 					dispatch(getAuthUserData());
 				} else {
 								setFieldValue("general", response.data.messages.join(" "))
 				}
-			});
 	}
 
-	export const logout = () => (dispatch) => {
-		userAPI.logout()
-			.then(response => {
+	export const logout = () => async (dispatch) => {
+	let response = await	userAPI.logout()
+	
 				if (response.data.resultCode === 0) {
 					dispatch(setAuthUserData(null, null, null, false));
 				}
-			});
 	}
 
 
