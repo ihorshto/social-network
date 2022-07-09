@@ -1,6 +1,6 @@
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
-import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
 
@@ -10,9 +10,6 @@ const ProfileInfo = (props) => {
 
 	return (
 		<div className={s.descriptionContainer}>
-			{/* <div className={s.content__img}>
-				<img src='https://images-na.ssl-images-amazon.com/images/I/61+oIVFF7FL.png' />
-			</div> */}
 			<div className={s.descriptionBlock}>
 				<div className={s.descriptionPhoto}>
 					<img src={props.profile.photos.large} alt="" />
@@ -29,7 +26,7 @@ const ProfileInfo = (props) => {
 					</div>
 				</div>
 			</div>
-			<ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+			<ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
 		</div>
 	)
 }
