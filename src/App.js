@@ -12,7 +12,7 @@ import { compose } from "redux";
 import { withRouter } from "./hoc/withRouter";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 // Lazy loading
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -29,7 +29,7 @@ class App extends React.Component {
     if (!this.props.initialized) {
       return <Preloader />;
     }
-
+ 
     return (
       <div className="app-wrapper">
         <HeaderContainer />
@@ -66,11 +66,11 @@ let AppContainer = compose(
 
 const MainApp = (props) => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
